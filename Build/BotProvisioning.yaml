@@ -4,7 +4,7 @@ macOS:
     action: exec('softwareupdate', '--verbose', '-i', key(@))
   
   Java:
-    version: 1.8.0_131-b12
+    version: 1.8.0_144
     downloadUrl: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
     actions:
       - exec('open', downloadUrl)
