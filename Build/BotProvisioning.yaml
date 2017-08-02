@@ -1,5 +1,16 @@
 macOS:
 
+  Command Line Tools (macOS Sierra version 10.12) for Xcode-8.3:
+    action: exec('softwareupdate', '--verbose', '-i', key(@))
+  
+  Java:
+    version: 1.8.0_131-b12
+    downloadUrl: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+    actions:
+      - exec('open', downloadUrl)
+      - error('JDK {version} is not installed but cannot be downloaded automatically for legal reasons. Download and install from {downloadUrl}')
+    condition: exec('java', '-version')[1] != 'Java(TM) SE Runtime Environment (build {version})'
+
   Node.js:
     version: v6.11.1
     source: https://nodejs.org/dist/{version}/node-{version}.pkg
